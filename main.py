@@ -45,6 +45,11 @@ def character_search():
 def word_search():
     word = input('검색하고자 하는 단어를 입력해주세요! >> ')
     lines = [i for i in sentences if re.match(r'[A-Z][a-z]+:', i) and re.search(word, i)]
+
+    if not lines:
+        print('해당 단어가 포함된 대사가 없습니다!')
+        return
+
     for line in lines:
         print(line)
 
